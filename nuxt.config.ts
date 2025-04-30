@@ -3,5 +3,17 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
 
+  css: ['@/assets/styles/reset.css'],
+
   plugins: [],
+
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "@/assets/styles/index.scss";',
+        },
+      },
+    },
+  },
 })
